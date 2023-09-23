@@ -1,13 +1,13 @@
-from flask import Flask
+from flask import Flask, request, render_template
 from langchain.llms import OpenAI
 from env import OPENAI_API_KEY
-from requests import request
+# from requests import request
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return render_template('chat.html')
 
 @app.post('/chat')
 def chat():
