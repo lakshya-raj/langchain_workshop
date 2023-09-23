@@ -1,2 +1,5 @@
 pipenv
 flask
+langchain
+openai
+requests
