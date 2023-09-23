@@ -12,8 +12,8 @@ def hello_world():
 @app.post('/chat')
 def chat():
     question = request.json['question']
-    llm = OpenAI(OPENAI_API_KEY)
+    llm = OpenAI(openai_api_key=OPENAI_API_KEY)
     return llm.predict(question)
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run(port=5002, debug=True)
